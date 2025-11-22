@@ -1,0 +1,55 @@
+############################
+# Archivos generales del sistema
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Eclipse / IDE
+############################
+.project      
+.classpath    
+.settings/
+
+# Archivos generados automáticamente por Eclipse
+*.prefs
+
+############################
+# Java / Compilación
+############################
+bin/
+out/
+target/
+build/
+
+# Archivos generados por herramientas
+*.log
+
+############################
+# Archivos temporales
+############################
+*.tmp
+*.swp
+*.bak
+
+############################
+# Gradle (por si algún proyecto lo usa)
+############################
+.gradle/
+build/
+
+############################
+# Maven (por si algún proyecto lo usa)
+############################
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+############################
+# Archivos para test/coverage
+############################
+jacoco.exec
+coverage/
+
