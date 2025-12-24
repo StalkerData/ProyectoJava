@@ -19,11 +19,7 @@ public class Calculadora {
 	}
 
 	public static double Division(double a, double b) {
-		if (b == 0) {
-			System.out.println("El divisor no puede ser 0");
-			return 0;
-		}
-		return a * b;
+		return a / b;
 	}
 
 	public static double Modulo(double a, double b) {

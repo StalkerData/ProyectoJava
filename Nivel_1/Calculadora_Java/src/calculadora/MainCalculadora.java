@@ -5,15 +5,17 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainCalculadora {
-	public static Scanner entrada = new Scanner(System.in);
-	public static PrintStream salida=new PrintStream(System.out);
+	public Scanner entrada = new Scanner(System.in);
+	public PrintStream salida = new PrintStream(System.out);
 
 	public static void main(String[] args) {
-		crearNumeroEntero();
-
+		System.out.println("Calculadora en Java");
+		MainCalculadora calc = new MainCalculadora();
+		calc.app();
+		System.out.println("Fin del Programa");
 	}
 
-	public static double crearNumero() {
+	public double crearNumero() {
 		while (true) {
 			try {
 				salida.print(": ");
@@ -26,7 +28,7 @@ public class MainCalculadora {
 		}
 	}
 
-	public static double crearNumeroEntero() {
+	public int crearNumeroEntero() {
 		while (true) {
 			try {
 				salida.print(": ");
@@ -39,7 +41,7 @@ public class MainCalculadora {
 		}
 	}
 
-	public static void menu() {
+	public void menu() {
 		salida.print("""
 				Menu
 				1. Suma
@@ -47,9 +49,105 @@ public class MainCalculadora {
 				3. Multiplicación
 				4. División
 				5. Módulo
-				opcion
-				""");
+				6. Salir
+				opcion""");
 	}
 
+	public void fSuma() {
+		System.out.println("Suma");
+		System.out.print("ingrese el primer numero");
+		double num1 = crearNumero();
+		System.out.print("ingrese el segundo numero");
+		double num2 = crearNumero();
+		double result = Calculadora.Suma(num1, num2);
+		System.out.println("El resultado es: " + result);
+	}
+
+	public void fResta() {
+		System.out.println("Resta");
+		System.out.print("ingrese el primer numero");
+		double num1 = crearNumero();
+		System.out.print("ingrese el segundo numero");
+		double num2 = crearNumero();
+		double result = Calculadora.Resta(num1, num2);
+		System.out.println("El resultado es: " + result);
+	}
+
+	public void fMultiplicacion() {
+		System.out.println("Multiplicacion");
+		System.out.print("ingrese el primer numero");
+		double num1 = crearNumero();
+		System.out.print("ingrese el segundo numero");
+		double num2 = crearNumero();
+		double result = Calculadora.Multiplicacion(num1, num2);
+		System.out.println("El resultado es: " + result);
+	}
+
+	public void fDivision() {
+		System.out.println("Division");
+		System.out.print("ingrese el primer numero");
+		double num1 = crearNumero();
+		System.out.print("ingrese el segundo numero");
+		double num2 = crearNumero();
+		if (num2 == 0) {
+			System.out.println("El divisor no puede ser 0");
+			return;
+		}
+		double result = Calculadora.Division(num1, num2);
+		System.out.println("El resultado es: " + result);
+	}
+
+	public void fModulo() {
+		System.out.println("Modulo");
+		System.out.print("ingrese el primer numero");
+		double num1 = crearNumero();
+		System.out.print("ingrese el segundo numero");
+		double num2 = crearNumero();
+		if (num2 == 0) {
+			System.out.println("El divisor no puede ser 0");
+			return;
+		}
+		double result = Calculadora.Modulo(num1, num2);
+		System.out.println("El resultado es: " + result);
+	}
+
+	public void opciones(int op) {
+		switch (op) {
+		case 1:
+			fSuma();
+			break;
+		case 2:
+			fResta();
+			break;
+		case 3:
+			fMultiplicacion();
+			break;
+		case 4:
+			fDivision();
+			break;
+		case 5:
+			fModulo();
+			break;
+		case 6:
+			System.out.println("Hasta luego");
+			break;
+		default:
+			System.out.println("opcion erronea");
+			break;
+		}
+	}
+
+	public void app() {
+		int op = 0;
+		while (op != 6) {
+			menu();
+			op = crearNumeroEntero();
+			System.out.println();
+			opciones(op);
+			System.out.println();
+		}
+		entrada.close();
+		salida.close();
+	}
 
 }
