@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class MainCalculadora {
 	public Scanner entrada = new Scanner(System.in);
 	public PrintStream salida = new PrintStream(System.out);
+	public double numeros[] = new double[2];
 
 	public static void main(String[] args) {
 		System.out.println("Calculadora en Java");
@@ -41,6 +42,13 @@ public class MainCalculadora {
 		}
 	}
 
+	public void numerosFactores() {
+		System.out.print("ingrese el primer numero");
+		numeros[0] = crearNumero();
+		System.out.print("ingrese el segundo numero");
+		numeros[1] = crearNumero();
+	}
+
 	public void menu() {
 		salida.print("""
 				Menu
@@ -55,59 +63,44 @@ public class MainCalculadora {
 
 	public void fSuma() {
 		System.out.println("Suma");
-		System.out.print("ingrese el primer numero");
-		double num1 = crearNumero();
-		System.out.print("ingrese el segundo numero");
-		double num2 = crearNumero();
-		double result = Calculadora.Suma(num1, num2);
+		numerosFactores();
+		double result = Calculadora.Suma(numeros[0], numeros[1]);
 		System.out.println("El resultado es: " + result);
 	}
 
 	public void fResta() {
 		System.out.println("Resta");
-		System.out.print("ingrese el primer numero");
-		double num1 = crearNumero();
-		System.out.print("ingrese el segundo numero");
-		double num2 = crearNumero();
-		double result = Calculadora.Resta(num1, num2);
+		numerosFactores();
+		double result = Calculadora.Resta(numeros[0], numeros[1]);
 		System.out.println("El resultado es: " + result);
 	}
 
 	public void fMultiplicacion() {
 		System.out.println("Multiplicacion");
-		System.out.print("ingrese el primer numero");
-		double num1 = crearNumero();
-		System.out.print("ingrese el segundo numero");
-		double num2 = crearNumero();
-		double result = Calculadora.Multiplicacion(num1, num2);
+		numerosFactores();
+		double result = Calculadora.Multiplicacion(numeros[0], numeros[1]);
 		System.out.println("El resultado es: " + result);
 	}
 
 	public void fDivision() {
 		System.out.println("Division");
-		System.out.print("ingrese el primer numero");
-		double num1 = crearNumero();
-		System.out.print("ingrese el segundo numero");
-		double num2 = crearNumero();
-		if (num2 == 0) {
+		numerosFactores();
+		if (numeros[1] == 0) {
 			System.out.println("El divisor no puede ser 0");
 			return;
 		}
-		double result = Calculadora.Division(num1, num2);
+		double result = Calculadora.Division(numeros[0], numeros[1]);
 		System.out.println("El resultado es: " + result);
 	}
 
 	public void fModulo() {
 		System.out.println("Modulo");
-		System.out.print("ingrese el primer numero");
-		double num1 = crearNumero();
-		System.out.print("ingrese el segundo numero");
-		double num2 = crearNumero();
-		if (num2 == 0) {
+		numerosFactores();
+		if (numeros[1] == 0) {
 			System.out.println("El divisor no puede ser 0");
 			return;
 		}
-		double result = Calculadora.Modulo(num1, num2);
+		double result = Calculadora.Modulo(numeros[0], numeros[1]);
 		System.out.println("El resultado es: " + result);
 	}
 
