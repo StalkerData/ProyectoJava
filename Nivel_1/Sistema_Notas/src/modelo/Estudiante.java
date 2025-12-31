@@ -1,15 +1,17 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Estudiante {
 	private String nombre;
 	private String identificador;
-	private List lista_notas;
+	private List<Float> lista_notas;
 
 	public Estudiante(String identificador, String nombre) {
 		this.identificador = identificador;
 		this.nombre = nombre;
+		this.lista_notas = new ArrayList<Float>();
 	}
 
 	public String getNombre() {
@@ -28,13 +30,17 @@ public class Estudiante {
 		this.identificador = identificador;
 	}
 
-	public List getLista_notas() {
+	public List<Float> getLista_notas() {
 		return lista_notas;
 	}
 
-	public void setLista_notas(List lista_notas) {
+	public void setLista_notas(List<Float> lista_notas) {
 		this.lista_notas = lista_notas;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "nombre: " + nombre + "\nidentificador:" + identificador + "\nlista_notas: " + lista_notas.toString();
+	}
 
 }
