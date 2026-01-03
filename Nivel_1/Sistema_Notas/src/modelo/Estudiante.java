@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Estudiante {
 	private String nombre;
-	private String identificador;
+	private String id;
 	private List<Float> lista_notas;
 
 	public Estudiante(String identificador, String nombre) {
-		this.identificador = identificador;
+		this.id = identificador;
 		this.nombre = nombre;
-		this.lista_notas = new ArrayList<Float>();
+		this.lista_notas=null;
 	}
 
 	public String getNombre() {
@@ -23,11 +23,11 @@ public class Estudiante {
 	}
 
 	public String getIdentificador() {
-		return identificador;
+		return id;
 	}
 
 	public void setIdentificador(String identificador) {
-		this.identificador = identificador;
+		this.id = identificador;
 	}
 
 	public List<Float> getLista_notas() {
@@ -40,7 +40,8 @@ public class Estudiante {
 
 	@Override
 	public String toString() {
-		return "nombre: " + nombre + "\nidentificador:" + identificador + "\nlista_notas: " + lista_notas.toString();
+		return "Estudiante:\n- identificador:" + id + "\n- nombre: " + nombre + "\n- lista_notas: "
+				+ lista_notas.toString();
 	}
 
 }

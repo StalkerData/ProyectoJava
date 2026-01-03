@@ -20,11 +20,11 @@ public class Herramientas {
 
 	}
 
-	public static double crearReal() {
+	public static float crearReal() {
 		while (true) {
 			try {
 				System.out.print(": ");
-				return entrada.nextDouble();
+				return entrada.nextFloat();
 
 			} catch (InputMismatchException e) {
 				System.out.println("Deben ingresar un numero entero\n" + e);
