@@ -10,7 +10,9 @@ public class Herramientas {
 		while (true) {
 			try {
 				System.out.print(": ");
-				return entrada.nextInt();
+				int num = entrada.nextInt();
+				entrada.nextLine();
+				return num;
 
 			} catch (InputMismatchException e) {
 				System.out.println("Deben ingresar un numero Entero\n" + e);
@@ -24,7 +26,9 @@ public class Herramientas {
 		while (true) {
 			try {
 				System.out.print(": ");
-				return entrada.nextFloat();
+				float num = entrada.nextFloat();
+				entrada.nextLine();
+				return num;
 
 			} catch (InputMismatchException e) {
 				System.out.println("Deben ingresar un numero entero\n" + e);
@@ -48,6 +52,7 @@ public class Herramientas {
 		while (true) {
 			System.out.print("Ingrese el nombre (solo letras y numeros): ");
 			nombre = entrada.nextLine();
+			nombre = nombre.trim();
 			if (textoValido(nombre)) {
 				return nombre;
 			}
@@ -70,6 +75,7 @@ public class Herramientas {
 		while (true) {
 			System.out.print("Ingrese el ID (solo numeros): ");
 			id = entrada.nextLine();
+			id = id.trim();
 			if (idValido(id)) {
 				return id;
 			}
