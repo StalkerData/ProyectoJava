@@ -12,7 +12,7 @@ public class EstudianteLista {
 
 	public static void main(String[] args) {
 		System.out.println("Sistema de Notas en Consola");
-		listaEstudiantes=new ArrayList<Estudiante>();
+		listaEstudiantes = new ArrayList<Estudiante>();
 		App();
 		System.out.println("Fin Del programa");
 
@@ -22,7 +22,7 @@ public class EstudianteLista {
 		String identificador, nombre;
 		System.out.println("Registrar estudiantes");
 		identificador = Herramientas.crearID();
-		if (!listaEstudiantes.isEmpty() && estaEstudiantes(identificador) == null) {
+		if (estaEstudiantes(identificador) != null) {
 			System.out.println("El ID ya se encuentas intenta con otro");
 			return;
 		}
@@ -41,7 +41,7 @@ public class EstudianteLista {
 
 	public static void imprimir_lista() {
 		System.out.println("Lista de estudiantes");
-		if(listaEstudiantes.isEmpty()) {
+		if (listaEstudiantes.isEmpty()) {
 			System.out.println("no hay estudiantes");
 			return;
 		}
@@ -108,9 +108,13 @@ public class EstudianteLista {
 
 	public static void consultar_estudiante() {
 		System.out.println("Consultar a estudiante");
+		if (listaEstudiantes.isEmpty()) {
+			System.out.println("la lista esta vacia");
+			return;
+		}
 		String identificador = Herramientas.crearID();
 		Estudiante est = estaEstudiantes(identificador);
-		if (!listaEstudiantes.isEmpty() && est == null) {
+		if (est == null) {
 			System.out.println("El estudiante no existe");
 			return;
 		}
@@ -120,19 +124,60 @@ public class EstudianteLista {
 
 	public static void registrar_nota() {
 		System.out.println("Registrar nota a estudiante");
+		if (listaEstudiantes.isEmpty()) {
+			System.out.println("la lista esta vacia");
+			return;
+		}
 		String identificador = Herramientas.crearID();
 		Estudiante est = estaEstudiantes(identificador);
-		if (!listaEstudiantes.isEmpty() && est == null) {
+		if (est == null) {
 			System.out.println("El estudiante no existe");
 			return;
 		}
 		System.out.println("id: " + est.getIdentificador());
 		System.out.println("nombre: " + est.getNombre());
-		est.setLista_notas(listaDeNotas());
+		System.out.println();
+		opcionesRegistro(est);
+
+	}
+
+	public static void opcionesRegistro(Estudiante est) {
+		int op = 0;
+		while (op != 3) {
+			System.out.print("""
+					1. agregar nueva lista de notas
+					2. agregar nota a lista ya existente
+					3. salir
+					opcones""");
+			op = Herramientas.crearEntero();
+			switch (op) {
+			case 1:
+				est.setLista_notas(listaDeNotas());
+				break;
+			case 2:
+				if (est.getLista_notas() == null) {
+					System.out.println("la lista es nula, tiene que agregarle una lista nueva");
+					continue;
+				}
+				est.getLista_notas().addAll(listaDeNotas());
+				break;
+			case 3:
+				System.out.println("regresanto al menu general");
+				break;
+
+			default:
+				break;
+			}
+			System.out.println();
+		}
 	}
 
 	public static void calcular_promedio_estudiante() {
 		System.out.println("Calcular promedio a estudiante");
+		if (listaEstudiantes.isEmpty()) {
+			System.out.println("la lista esta vacia");
+			return;
+		}
 		String identificador = Herramientas.crearID();
 		Estudiante est = estaEstudiantes(identificador);
 		if (est == null) {
@@ -141,6 +186,7 @@ public class EstudianteLista {
 		}
 		System.out.println(est);
 		System.out.println("promedio: " + calcular_promedio(est.getLista_notas()));
+		System.out.println();
 	}
 
 	public static void menuApp() {
@@ -159,6 +205,7 @@ public class EstudianteLista {
 		while (op != 6) {
 			menuApp();
 			op = Herramientas.crearEntero();
+			System.out.println();
 			switch (op) {
 			case 1:
 				registrar_estudiante();
@@ -168,6 +215,7 @@ public class EstudianteLista {
 				break;
 			case 3:
 				calcular_promedio_estudiante();
+				break;
 			case 4:
 				imprimir_lista();
 				break;
@@ -181,13 +229,13 @@ public class EstudianteLista {
 				System.out.println("Opcion equivocada");
 				break;
 			}
+			System.out.println();
 
 		}
 	}
 	/*
-	 * hay problemas con el tema de la listas cuando son vacias
-	 * hay que verificar cuando imprimir
-	 * revisar esta estudiante
+	 * hay problemas con el tema de la listas cuando son vacias hay que verificar
+	 * cuando imprimir revisar esta estudiante
 	 */
 
 }

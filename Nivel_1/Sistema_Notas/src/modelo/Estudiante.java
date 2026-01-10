@@ -11,7 +11,7 @@ public class Estudiante {
 	public Estudiante(String identificador, String nombre) {
 		this.id = identificador;
 		this.nombre = nombre;
-		this.lista_notas=null;
+		this.lista_notas = null;
 	}
 
 	public String getNombre() {
@@ -40,8 +40,8 @@ public class Estudiante {
 
 	@Override
 	public String toString() {
-		return "Estudiante:\n- identificador:" + id + "\n- nombre: " + nombre + "\n- lista_notas: "
-				+ lista_notas.toString();
+		String lista = lista_notas == null ? "[]" : lista_notas.toString();
+		return "Estudiante:\n- identificador:" + id + "\n- nombre: " + nombre + "\n- lista_notas: " + lista;
 	}
 
 }
