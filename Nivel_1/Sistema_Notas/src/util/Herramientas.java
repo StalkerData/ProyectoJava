@@ -31,7 +31,7 @@ public class Herramientas {
 				return num;
 
 			} catch (InputMismatchException e) {
-				System.out.println("Deben ingresar un numero entero\n" + e);
+				System.out.println("Deben ingresar un numero real\n" + e);
 				entrada.next();
 			}
 		}

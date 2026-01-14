@@ -2,23 +2,17 @@ package controlador;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import modelo.Estudiante;
 import util.Herramientas;
 
 public class EstudianteLista {
-	public static List<Estudiante> listaEstudiantes;
-	public static Scanner entrada = new Scanner(System.in);
+	private List<Estudiante> listaEstudiantes;
 
-	public static void main(String[] args) {
-		System.out.println("Sistema de Notas en Consola");
+	public EstudianteLista() {
 		listaEstudiantes = new ArrayList<Estudiante>();
-		App();
-		System.out.println("Fin Del programa");
-
 	}
 
-	public static void registrar_estudiante() {
+	public void registrar_estudiante() {
 		String identificador, nombre;
 		System.out.println("Registrar estudiantes");
 		identificador = Herramientas.crearID();
@@ -30,7 +24,7 @@ public class EstudianteLista {
 		listaEstudiantes.add(new Estudiante(identificador, nombre));
 	}
 
-	public static Estudiante estaEstudiantes(String id) {
+	private Estudiante estaEstudiantes(String id) {
 		for (Estudiante estudiante : listaEstudiantes) {
 			if (estudiante.getIdentificador().equals(id)) {
 				return estudiante;
@@ -39,7 +33,7 @@ public class EstudianteLista {
 		return null;
 	}
 
-	public static void imprimir_lista() {
+	public void imprimir_lista() {
 		System.out.println("Lista de estudiantes");
 		if (listaEstudiantes.isEmpty()) {
 			System.out.println("no hay estudiantes");
@@ -51,7 +45,7 @@ public class EstudianteLista {
 
 	}
 
-	public static float crearNota() {
+	private float crearNota() {
 		while (true) {
 			System.out.print("Ingrese la Nota(0-5)");
 			float nota = Herramientas.crearReal();
@@ -64,7 +58,7 @@ public class EstudianteLista {
 
 	}
 
-	public static void menuNota() {
+	private void menuNota() {
 		System.out.print("""
 				Menu Nota
 				1) agregar
@@ -73,9 +67,10 @@ public class EstudianteLista {
 
 	}
 
-	public static List<Float> listaDeNotas() {
+	public List<Float> listaDeNotas() {
 		List<Float> notas = new ArrayList<Float>();
 		int op = 0;
+		System.out.println();
 		while (op != 2) {
 			menuNota();
 			op = Herramientas.crearEntero();
@@ -95,7 +90,7 @@ public class EstudianteLista {
 		return notas;
 	}
 
-	public static float calcular_promedio(List<Float> listaNota) {
+	public float calcular_promedio(List<Float> listaNota) {
 		if (listaNota.isEmpty())
 			return 0.0f;
 		float suma = 0.0f;
@@ -106,7 +101,7 @@ public class EstudianteLista {
 
 	}
 
-	public static void consultar_estudiante() {
+	public void consultar_estudiante() {
 		System.out.println("Consultar a estudiante");
 		if (listaEstudiantes.isEmpty()) {
 			System.out.println("la lista esta vacia");
@@ -122,7 +117,7 @@ public class EstudianteLista {
 
 	}
 
-	public static void registrar_nota() {
+	public void registrar_nota() {
 		System.out.println("Registrar nota a estudiante");
 		if (listaEstudiantes.isEmpty()) {
 			System.out.println("la lista esta vacia");
@@ -141,9 +136,10 @@ public class EstudianteLista {
 
 	}
 
-	public static void opcionesRegistro(Estudiante est) {
+	private void opcionesRegistro(Estudiante est) {
 		int op = 0;
 		while (op != 3) {
+			System.out.println("Opciones de lista");
 			System.out.print("""
 					1. agregar nueva lista de notas
 					2. agregar nota a lista ya existente
@@ -172,7 +168,7 @@ public class EstudianteLista {
 		}
 	}
 
-	public static void calcular_promedio_estudiante() {
+	public void calcular_promedio_estudiante() {
 		System.out.println("Calcular promedio a estudiante");
 		if (listaEstudiantes.isEmpty()) {
 			System.out.println("la lista esta vacia");
@@ -188,54 +184,5 @@ public class EstudianteLista {
 		System.out.println("promedio: " + calcular_promedio(est.getLista_notas()));
 		System.out.println();
 	}
-
-	public static void menuApp() {
-		System.out.print("""
-				1. Registrar estudiante X
-				2. Registrar nota X
-				3. Calcular promedio X
-				4. Listar estudiantes X
-				5. Consultar estudiante X
-				6. Salir
-				opcion""");
-	}
-
-	public static void App() {
-		int op = 0;
-		while (op != 6) {
-			menuApp();
-			op = Herramientas.crearEntero();
-			System.out.println();
-			switch (op) {
-			case 1:
-				registrar_estudiante();
-				break;
-			case 2:
-				registrar_nota();
-				break;
-			case 3:
-				calcular_promedio_estudiante();
-				break;
-			case 4:
-				imprimir_lista();
-				break;
-			case 5:
-				consultar_estudiante();
-				break;
-			case 6:
-				System.out.println("Hasta luego");
-				break;
-			default:
-				System.out.println("Opcion equivocada");
-				break;
-			}
-			System.out.println();
-
-		}
-	}
-	/*
-	 * hay problemas con el tema de la listas cuando son vacias hay que verificar
-	 * cuando imprimir revisar esta estudiante
-	 */
 
 }
