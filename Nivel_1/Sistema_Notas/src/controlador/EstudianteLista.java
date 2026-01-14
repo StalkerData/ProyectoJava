@@ -91,7 +91,7 @@ public class EstudianteLista {
 	}
 
 	public float calcular_promedio(List<Float> listaNota) {
-		if (listaNota.isEmpty())
+		if (listaNota == null)
 			return 0.0f;
 		float suma = 0.0f;
 		for (Float nota : listaNota) {
