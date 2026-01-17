@@ -91,8 +91,6 @@ public class EstudianteLista {
 	}
 
 	public float calcular_promedio(List<Float> listaNota) {
-		if (listaNota == null)
-			return 0.0f;
 		float suma = 0.0f;
 		for (Float nota : listaNota) {
 			suma += nota;
@@ -152,7 +150,7 @@ public class EstudianteLista {
 				break;
 			case 2:
 				if (est.getLista_notas() == null) {
-					System.out.println("la lista es nula, tiene que agregarle una lista nueva");
+					System.out.println("El estudiante no tiene notas registradas todavía");
 					continue;
 				}
 				est.getLista_notas().addAll(listaDeNotas());
@@ -181,6 +179,10 @@ public class EstudianteLista {
 			return;
 		}
 		System.out.println(est);
+		if (est.getLista_notas() == null) {
+			System.out.println("El estudiante no tiene notas registradas");
+			return;
+		}
 		System.out.println("promedio: " + calcular_promedio(est.getLista_notas()));
 		System.out.println();
 	}
