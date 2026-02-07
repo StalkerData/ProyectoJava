@@ -1,6 +1,6 @@
-package biblioteca.model;
+package main.java.com.biblioteca.model;
 
-import biblioteca.interfaces.Prestable;
+import main.java.com.biblioteca.interfaces.Prestable;
 
 public class Libro extends Material implements Prestable {
 	private String autor;

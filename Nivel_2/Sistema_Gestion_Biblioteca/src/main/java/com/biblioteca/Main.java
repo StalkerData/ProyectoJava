@@ -1,4 +1,4 @@
-package biblioteca;
+package main.java.com.biblioteca;
 
 public class Main {
 

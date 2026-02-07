@@ -1,4 +1,4 @@
-package biblioteca.model;
+package main.java.com.biblioteca.model;
 
 public class Revista extends Material {
 	private int numeroEdicion;

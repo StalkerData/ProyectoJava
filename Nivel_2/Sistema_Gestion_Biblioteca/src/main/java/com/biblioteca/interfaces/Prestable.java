@@ -1,4 +1,4 @@
-package biblioteca.interfaces;
+package main.java.com.biblioteca.interfaces;
 
 public interface Prestable {
 	void prestar();

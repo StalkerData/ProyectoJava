@@ -1,4 +1,4 @@
-package biblioteca.model;
+package main.java.com.biblioteca.model;
 
 public abstract class Material {
 	protected String id;
