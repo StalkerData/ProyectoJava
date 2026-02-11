@@ -2,24 +2,24 @@ package main.java.com.biblioteca.model;
 
 import main.java.com.biblioteca.interfaces.Prestable;
 
-public class Libro extends Material implements Prestable {
-	private String autor;
-	private String isbn;
+public class Audiovisual extends Material implements Prestable {
+	private String formato;
+	private int duracionMinutos;
 	private boolean disponible;
 
-	public Libro(String id, String titulo, int anioPublicacion, String autor, String isbn) {
+	public Audiovisual(String id, String titulo, int anioPublicacion, String formato, int duracionMinutos) {
 		super(id, titulo, anioPublicacion);
-		this.autor = autor;
-		this.isbn = isbn;
+		this.formato = formato;
+		this.duracionMinutos = duracionMinutos;
 		this.disponible = true;
 	}
 
-	public String getAutor() {
-		return autor;
+	public String getFormato() {
+		return formato;
 	}
 
-	public String getIsbn() {
-		return isbn;
+	public int getDuracionMinutos() {
+		return duracionMinutos;
 	}
 
 	public boolean isDisponible() {
@@ -44,13 +44,13 @@ public class Libro extends Material implements Prestable {
 
 	@Override
 	public String getTipoMaterial() {
-		return "Libro";
+		return "Audiovisual";
 	}
 
 	@Override
 	public String toString() {
-		return "Libro [" + super.toString() + ", autor=" + autor + ", isbn=" + isbn + ", disponible=" + disponible
-				+ "]";
+		return "Audiovisual [" + super.toString() + ", formato=" + formato + ", duracionMinutos=" + duracionMinutos
+				+ ", disponible=" + disponible + "]";
 	}
 
 }

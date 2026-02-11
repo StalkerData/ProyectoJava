@@ -19,7 +19,7 @@ public class Revista extends Material {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nnumeroEdicion: " + numeroEdicion;
+		return "Revista [" + super.toString() + ", numeroEdicion=" + numeroEdicion + "]";
 	}
 
 }

@@ -14,11 +14,6 @@ public abstract class Material {
 
 	public abstract String getTipoMaterial();
 
-	@Override
-	public String toString() {
-		return "id: " + id + "\ntitulo: " + titulo + "\nanioPublicacion: " + anioPublicacion;
-	}
-
 	public String getId() {
 		return id;
 	}
@@ -29,6 +24,11 @@ public abstract class Material {
 
 	public int getAnioPublicacion() {
 		return anioPublicacion;
+	}
+
+	@Override
+	public String toString() {
+		return "id=" + id + ", titulo=" + titulo + ", anioPublicacion=" + anioPublicacion;
 	}
 
 }
