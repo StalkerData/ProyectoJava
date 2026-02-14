@@ -1,5 +1,6 @@
 package main.java.com.biblioteca.model;
 
+import main.java.com.biblioteca.exception.MaterialNoDisponibleException;
 import main.java.com.biblioteca.interfaces.Prestable;
 
 public class Libro extends Material implements Prestable {
@@ -27,13 +28,12 @@ public class Libro extends Material implements Prestable {
 	}
 
 	@Override
-	public void prestar() {
+	public void prestar() throws Exception {
 		if (disponible)
 			this.disponible = false;
 		else {
-			// prototipo de exepcion, todavia no imprementado
-			System.out.println("Error");
-			return;
+			throw new MaterialNoDisponibleException(
+					String.format("Este material: %s, no se puede prestar.", this.getTipoMaterial()));
 		}
 	}
 
