@@ -1,17 +1,27 @@
 package main.java.com.biblioteca.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import main.java.com.biblioteca.exception.IdDuplicadoException;
 import main.java.com.biblioteca.exception.IdNoEncontrado;
 import main.java.com.biblioteca.exception.MaterialNoDisponibleException;
+import main.java.com.biblioteca.interfaces.Prestable;
 import main.java.com.biblioteca.model.*;
 
 public class BibliotecaService {
 	private Map<String, Material> inventario;
 	private Map<String, Usuario> usuarios;
 	private List<Prestamo> historialPrestamos;
+
+	public BibliotecaService() {
+		this.inventario = new HashMap<>();
+		this.usuarios = new HashMap<>();
+		this.historialPrestamos = new ArrayList<>();
+	}
 
 	public void registrarMaterial(Material material) {
 		if (inventario.containsKey(material.getId())) {
@@ -43,10 +53,25 @@ public class BibliotecaService {
 			throw new MaterialNoDisponibleException(
 					String.format("Este material: %s, no se puede prestar", m.getTipoMaterial()));
 		}
+		try {
+			Prestable itemPrestable = (Prestable) m;
+			itemPrestable.prestar();
+		} catch (MaterialNoDisponibleException e) {
+			e.printStackTrace();
+		}
+		historialPrestamos.add(new Prestamo(u, m));
 
 	}
 
-	public void devolverMaterial(String idMaterial) {
+	public void devolverMaterial(String idMaterial) throws Exception {
+		Material m = buscarMaterial(idMaterial);
+		if (m == null) {
+			throw new IdNoEncontrado(
+					String.format("El id: %s, no se encuentra registrado en el inventario.", idMaterial));
+
+		}
+		Optional<Prestamo> prestamo = buscarPrestamo(m);
+		
 
 	}
 
@@ -56,6 +81,12 @@ public class BibliotecaService {
 
 	public Usuario buscarUsuario(String id) {
 		return usuarios.get(id);
+	}
+
+	public Optional<Prestamo> buscarPrestamo(Material m) {
+		return historialPrestamos.stream().filter(
+				prestamo -> prestamo.getMaterial().equals(m) && prestamo.getFechaDevolucion() == null)
+				.findFirst();
 	}
 
 }

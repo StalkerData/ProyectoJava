@@ -1,6 +1,6 @@
 package main.java.com.biblioteca.exception;
 
-public class IdDuplicadoException extends RuntimeException {
+public class IdDuplicadoException extends IllegalArgumentException {
 
 	private static final long serialVersionUID = 1L;
 
