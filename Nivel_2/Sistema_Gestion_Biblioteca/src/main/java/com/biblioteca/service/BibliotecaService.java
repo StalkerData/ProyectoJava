@@ -49,9 +49,9 @@ public class BibliotecaService {
 					String.format("El id: %s, no se encuentra registrado en el inventario.", idMaterial));
 
 		}
-		if (m instanceof Revista) {
+		if (!(m instanceof Prestable)) {
 			throw new MaterialNoDisponibleException(
-					String.format("Este material: %s, no se puede prestar", m.getTipoMaterial()));
+					String.format("El material: %s, no es prestable.", m.getTipoMaterial()));
 		}
 		try {
 			Prestable itemPrestable = (Prestable) m;
@@ -70,8 +70,19 @@ public class BibliotecaService {
 					String.format("El id: %s, no se encuentra registrado en el inventario.", idMaterial));
 
 		}
+		if (!(m instanceof Prestable)) {
+			throw new MaterialNoDisponibleException(
+					String.format("El material: %s, no es prestable.", m.getTipoMaterial()));
+		}
+
 		Optional<Prestamo> prestamo = buscarPrestamo(m);
-		
+		if (prestamo.isEmpty()) {
+			throw new Exception("No hay préstamos activos para este material.");
+		}
+		Prestable itemPrestable = (Prestable) m;
+		itemPrestable.devolver();
+
+		prestamo.get().registrarDevolucion();
 
 	}
 
@@ -84,8 +95,8 @@ public class BibliotecaService {
 	}
 
 	public Optional<Prestamo> buscarPrestamo(Material m) {
-		return historialPrestamos.stream().filter(
-				prestamo -> prestamo.getMaterial().equals(m) && prestamo.getFechaDevolucion() == null)
+		return historialPrestamos.stream()
+				.filter(prestamo -> prestamo.getMaterial().equals(m) && prestamo.getFechaDevolucion() == null)
 				.findFirst();
 	}
 
