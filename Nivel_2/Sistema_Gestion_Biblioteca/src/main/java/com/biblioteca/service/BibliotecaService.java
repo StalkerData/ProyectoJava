@@ -53,12 +53,10 @@ public class BibliotecaService {
 			throw new MaterialNoDisponibleException(
 					String.format("El material: %s, no es prestable.", m.getTipoMaterial()));
 		}
-		try {
-			Prestable itemPrestable = (Prestable) m;
-			itemPrestable.prestar();
-		} catch (MaterialNoDisponibleException e) {
-			e.printStackTrace();
-		}
+
+		Prestable itemPrestable = (Prestable) m;
+		itemPrestable.prestar();
+
 		historialPrestamos.add(new Prestamo(u, m));
 
 	}

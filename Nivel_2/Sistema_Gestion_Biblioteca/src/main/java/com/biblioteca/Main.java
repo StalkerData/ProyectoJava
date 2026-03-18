@@ -16,6 +16,7 @@ public class Main {
 			biblio.registrarMaterial(revista1);
 			biblio.registrarMaterial(libro1);
 			biblio.prestarMaterial(user1.id(),libro1.getId());
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
