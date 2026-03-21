@@ -98,4 +98,17 @@ public class BibliotecaService {
 				.findFirst();
 	}
 
+	public Map<String, Material> getInventario() {
+		return inventario;
+	}
+
+	public Map<String, Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public List<Prestamo> getHistorialPrestamos() {
+		return historialPrestamos;
+	}
+	
+
 }
