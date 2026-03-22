@@ -36,19 +36,19 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		metodosMain.imprimirLista(biblio.getHistorialPrestamos());
-		metodosMain.imprimirMap(biblio.getInventario());
-		metodosMain.imprimirMap(biblio.getUsuarios());
+		imprimirLista(biblio.getHistorialPrestamos());
+		imprimirMap(biblio.getInventario());
+		imprimirMap(biblio.getUsuarios());
 		System.out.println("Fin del programa");
 
 	}
 
-	public <E> void imprimirLista(List<E> lista) {
+	public static <E> void imprimirLista(List<E> lista) {
 		lista.forEach(System.out::println);
 		System.out.println();
 	}
 
-	public <K, V> void imprimirMap(Map<K, V> mapa) {
+	public static <K, V> void imprimirMap(Map<K, V> mapa) {
 		for (Map.Entry<K, V> entry : mapa.entrySet()) {
 			System.out.println(entry.getKey() + ": " + entry.getValue());
 
