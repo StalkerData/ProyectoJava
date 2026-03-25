@@ -34,6 +34,12 @@ Este proyecto forma parte del **Nivel 1** del portafolio y está enfocado en ló
 Los datos existen únicamente durante la ejecución del programa y no se almacenan de forma permanente.
 
 ---
+
+**Regresar al [Nivel 1](../README.md) 🧱**
+
+**Regresar al [Principal](../../README.md) 🏠**
+
+---
 ## Autor
 👨🏻‍💼 **[GitHub: StalkerData](https://github.com/StalkerData)**
 

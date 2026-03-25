@@ -34,6 +34,12 @@ Forma parte del **Nivel 1** del portafolio, enfocado en bases sólidas antes de 
 La aplicación se ejecuta completamente en consola y no almacena información entre ejecuciones.
 
 ---
+
+**Regresar al [README Nivel 1](../README.md) 🧱**
+
+**Regresar al [README principal](../../README.md) 🏠**
+
+---
 ## Autor
 👨🏻‍💼 **[GitHub: StalkerData](https://github.com/StalkerData)**
 

@@ -31,9 +31,13 @@ Durante este nivel se trabajan los siguientes conceptos:
 Aplicación de consola que permite realizar operaciones matemáticas básicas mediante un menú interactivo.  
 Su objetivo es reforzar la lógica de programación, el uso de métodos y el control de flujo.
 
+🧮 **[Calculadora](Calculadora_Java/README.md)**
+
 ### 📚 Sistema de Notas en Consola
 Aplicación de consola para la gestión de estudiantes y sus notas académicas.  
 Permite registrar estudiantes, asignar notas, calcular promedios y consultar información, aplicando colecciones dinámicas y validaciones básicas.
+
+📚 **[Sistema de Notas](Sistema_Notas/README.md)**
 
 ---
 
@@ -46,6 +50,10 @@ Permite registrar estudiantes, asignar notas, calcular promedios y consultar inf
 - Sin frontend
 
 Este nivel sienta las bases necesarias para avanzar hacia niveles posteriores donde se introducirán persistencia, APIs y frameworks backend.
+
+---
+
+**Regresar al [Principal](../README.md) 🏠**
 
 ---
 ## Autor

@@ -42,8 +42,10 @@ Cada carpeta de nivel contiene:
 
 ## 🚀 Niveles de la ruta de aprendizaje
 
-### ✅ Nivel 1: Fundamentos Básicos
+### 🏠 Nivel 1: Fundamentos Básicos
 Nivel enfocado en los pilares de la programación y el backend con Java.
+
+🏠 **[Nivel 1](Nivel_1/README.md)**
 
 **Conceptos abordados:**
 - Sintaxis básica de Java
@@ -72,7 +74,7 @@ Las aplicaciones de este nivel:
 
 ## 🚀 Próximos pasos (planificados)
 
-- 🧱 Nivel 2: Programación Orientada a Objetos intermedia y estructuras de datos
+- 📦 Nivel 2: Programación Orientada a Objetos intermedia y estructuras de datos
 - 🗄️ Nivel 3: Persistencia de datos y bases de datos con Java
 - 🌐 Nivel 4: Desarrollo de APIs REST con Java
 - 🏗️ Nivel 5: Arquitectura backend escalable y buenas prácticas
@@ -84,7 +86,7 @@ Estos niveles se añadirán progresivamente al repositorio.
 ---
 
 ## 📌 Estado actual
-✔ Nivel 1 completado  
+✔ 🏠 Nivel 1 completado  
 🚧 Niveles superiores en planificación y desarrollo
 
 ---

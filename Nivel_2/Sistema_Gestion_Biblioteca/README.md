@@ -21,5 +21,9 @@ Motor de lógica de negocio (Core) desarrollado 100% en Java, diseñado para ges
 <img src="img/DiagramaFlujo.png" style="height:600px;">
 
 ---
+
+**Regresar al [README principal](../../README.md) 🏠**
+
+---
 ## Autor
 👨🏻‍💼 **[GitHub: StalkerData](https://github.com/StalkerData)**
