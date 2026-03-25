@@ -1,6 +1,6 @@
-# Sistema de Notas en Consola con Java
+# 📝 Sistema de Notas en Consola con Java
 
-## Descripción
+## 🧐 Descripción
 Aplicación de consola desarrollada en Java para la gestión básica de estudiantes y sus notas académicas.  
 Permite registrar estudiantes, asignarles notas, calcular promedios y consultar la información almacenada durante la ejecución del programa.
 
@@ -8,7 +8,7 @@ Este proyecto forma parte del **Nivel 1** del portafolio y está enfocado en ló
 
 ---
 
-## Objetivos
+## 🎯 Objetivos
 - Aplicar programación orientada a objetos a nivel básico.
 - Manejar colecciones dinámicas en Java.
 - Implementar lógica de negocio sin persistencia.
@@ -17,7 +17,7 @@ Este proyecto forma parte del **Nivel 1** del portafolio y está enfocado en ló
 
 ---
 
-## Funcionalidades / Flujo de la aplicación
+## 🔄 Funcionalidades / Flujo de la aplicación
 1. Mostrar un menú principal con las opciones del sistema.
 2. Registrar estudiantes mediante un identificador único y un nombre.
 3. Registrar notas a estudiantes existentes.
@@ -34,7 +34,6 @@ Este proyecto forma parte del **Nivel 1** del portafolio y está enfocado en ló
 Los datos existen únicamente durante la ejecución del programa y no se almacenan de forma permanente.
 
 ---
-
 ## Autor
-GitHub: **StalkerData**
+👨🏻‍💼 **[GitHub: StalkerData](https://github.com/StalkerData)**
 

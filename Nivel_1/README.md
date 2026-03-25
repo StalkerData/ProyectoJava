@@ -1,6 +1,6 @@
-# Nivel 1: Fundamentos Básicos de Programación y Backend
+# 🧱 Nivel 1: Fundamentos Básicos de Programación y Backend
 
-## Descripción
+## 🧐 Descripción
 Este nivel corresponde a la base fundamental de la ruta de aprendizaje en desarrollo backend con Java.  
 Aquí se trabajan los conceptos esenciales del lenguaje y de la lógica de programación, utilizando aplicaciones de consola como medio principal para afianzar el razonamiento y las estructuras básicas antes de avanzar a tecnologías más complejas.
 
@@ -8,7 +8,7 @@ El enfoque de este nivel es **backend**, sin interfaces gráficas ni persistenci
 
 ---
 
-## Conocimientos esenciales abordados
+## 🧠 Conocimientos esenciales abordados
 Durante este nivel se trabajan los siguientes conceptos:
 
 - Sintaxis básica de Java
@@ -37,7 +37,7 @@ Permite registrar estudiantes, asignar notas, calcular promedios y consultar inf
 
 ---
 
-## Alcance del nivel
+## 🔭 Alcance del nivel
 - Aplicaciones ejecutadas exclusivamente en consola
 - Sin uso de archivos
 - Sin bases de datos
@@ -48,7 +48,5 @@ Permite registrar estudiantes, asignar notas, calcular promedios y consultar inf
 Este nivel sienta las bases necesarias para avanzar hacia niveles posteriores donde se introducirán persistencia, APIs y frameworks backend.
 
 ---
-
 ## Autor
-GitHub: **StalkerData**
-
+👨🏻‍💼 **[GitHub: StalkerData](https://github.com/StalkerData)**

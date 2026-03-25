@@ -1,6 +1,6 @@
-# Calculadora en Java (Consola)
+# 🔢 Calculadora en Java (Consola)
 
-## Descripción
+## 🧐 Descripción
 Aplicación de consola desarrollada en Java que permite realizar operaciones matemáticas básicas mediante un menú interactivo.  
 El proyecto está orientado a reforzar los fundamentos del lenguaje Java y la lógica de programación en un entorno backend sin interfaz gráfica.
 
@@ -8,7 +8,7 @@ Forma parte del **Nivel 1** del portafolio, enfocado en bases sólidas antes de 
 
 ---
 
-## Objetivos
+## 🎯 Objetivos
 - Comprender la sintaxis básica de Java.
 - Aplicar estructuras de control (`if`, `switch`, bucles).
 - Implementar métodos para separar la lógica del programa.
@@ -17,7 +17,7 @@ Forma parte del **Nivel 1** del portafolio, enfocado en bases sólidas antes de 
 
 ---
 
-## Funcionalidades / Flujo de la aplicación
+## 🔄 Funcionalidades / Flujo de la aplicación
 1. Mostrar un menú de opciones al usuario.
 2. Permitir seleccionar una operación matemática:
    - Suma
@@ -34,7 +34,6 @@ Forma parte del **Nivel 1** del portafolio, enfocado en bases sólidas antes de 
 La aplicación se ejecuta completamente en consola y no almacena información entre ejecuciones.
 
 ---
-
 ## Autor
-GitHub: **StalkerData**
+👨🏻‍💼 **[GitHub: StalkerData](https://github.com/StalkerData)**
 

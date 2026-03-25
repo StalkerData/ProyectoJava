@@ -2,7 +2,7 @@
 
 ---
 
-## Descripción
+## 🧐 Descripción
 Este repositorio documenta y contiene una ruta de aprendizaje profesional enfocada principalmente en **desarrollo backend con Java**, organizada por niveles progresivos.  
 Cada nivel introduce conceptos, prácticas y proyectos diseñados para construir una base sólida antes de avanzar hacia arquitecturas más complejas, cloud y DevOps.
 
@@ -89,5 +89,5 @@ Estos niveles se añadirán progresivamente al repositorio.
 
 ---
 
-## 👨🏻‍💼 Autor
-GitHub: **StalkerData**
+## Autor
+👨🏻‍💼 **[GitHub: StalkerData](https://github.com/StalkerData)**
