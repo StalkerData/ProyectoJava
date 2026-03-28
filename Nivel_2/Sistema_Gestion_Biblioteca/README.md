@@ -22,7 +22,7 @@ Motor de lógica de negocio (Core) desarrollado 100% en Java, diseñado para ges
 
 ---
 
-**Regresar al [README principal](../../README.md) 🏠**
+**Regresar al [Principal](../../README.md) 🏠**
 
 ---
 ## Autor

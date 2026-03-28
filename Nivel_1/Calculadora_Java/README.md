@@ -35,9 +35,9 @@ La aplicación se ejecuta completamente en consola y no almacena información en
 
 ---
 
-**Regresar al [README Nivel 1](../README.md) 🧱**
+**Regresar al [Nivel 1](../README.md) 🧱**
 
-**Regresar al [README principal](../../README.md) 🏠**
+**Regresar al [Principal](../../README.md) 🏠**
 
 ---
 ## Autor
