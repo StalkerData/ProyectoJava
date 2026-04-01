@@ -1,5 +1,8 @@
 package main.java.com.rpg.interfaces;
 
-public interface Sanador {
+import main.java.com.rpg.models.Personaje;
 
+public interface Sanador {
+	public void Curable(Personaje personaje);
+	
 }
