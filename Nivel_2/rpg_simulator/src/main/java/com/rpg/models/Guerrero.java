@@ -8,7 +8,7 @@ public class Guerrero extends Personaje {
 	}
 
 	@Override
-	void atacar(Personaje objetivo) {
+	public void atacar(Personaje objetivo) {
 		float golpe = this.ataqueBase * 1.2f;
 		objetivo.recibirDano((int) (golpe));
 	}

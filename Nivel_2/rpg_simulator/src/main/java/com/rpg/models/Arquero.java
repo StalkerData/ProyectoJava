@@ -9,7 +9,7 @@ public class Arquero extends Personaje {
 	}
 
 	@Override
-	void atacar(Personaje objetivo) {
+	public void atacar(Personaje objetivo) {
 		int probabilidad = ThreadLocalRandom.current().nextInt(1, 101);
 
 		if (probabilidad <= 25) {

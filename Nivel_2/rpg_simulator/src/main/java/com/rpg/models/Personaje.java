@@ -53,6 +53,6 @@ public abstract class Personaje {
 		return estaVivo;
 	}
 
-	abstract void atacar(Personaje objetivo);
+	public abstract void atacar(Personaje objetivo);
 
 }

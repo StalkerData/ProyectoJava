@@ -9,7 +9,7 @@ public class Mago extends Personaje implements Sanador {
 	}
 
 	@Override
-	void atacar(Personaje objetivo) {
+	public void atacar(Personaje objetivo) {
 		objetivo.recibirDano(ataqueBase);
 	}
 
