@@ -55,6 +55,8 @@ public class Equipo<T extends Personaje> {
 		int menorHp = Integer.MAX_VALUE;
 
 		for (T per : miembros) {
+			if (per.getHp() == per.getHpMax())
+				continue;
 			if (per.isEstaVivo() && per.getHp() < menorHp) {
 				menorHp = per.getHp();
 				masHerido = per;
