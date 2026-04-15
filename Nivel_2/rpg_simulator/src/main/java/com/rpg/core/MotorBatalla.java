@@ -34,33 +34,46 @@ public class MotorBatalla {
 		this.equipoB = equipoB;
 	}
 
-	public void pelea() {
-	        Personaje atacante = equipoA.obtenerPersonajeVivoAleatorio();
-	        Personaje victima = equipoB.obtenerPersonajeVivoAleatorio();
+	private void turnoAtaque(Personaje atacante, Personaje victima,Equipo<?> equipoAtacante) {
+		System.out.println("\n--- Turno de " + atacante.getNombre() + " ---");
+		// Lógica del Mago
+		if (atacante instanceof Mago) {
+			boolean decideCurar = ThreadLocalRandom.current().nextBoolean();
+			Personaje aliadoHerido = equipoAtacante.masHerido();
 
-	        // Validamos por seguridad que existan personajes vivos
-	        if (atacante == null || victima == null) {
-	            System.out.println("No hay suficientes personajes vivos para pelear.");
-	            return;
-	        }
+			if (decideCurar && aliadoHerido != null) {
+				System.out.println(atacante.getNombre() + " decide usar magia curativa en " + aliadoHerido.getNombre());
+				((Mago) atacante).Curable(aliadoHerido);
+				return;
+			}
+		}
 
-	        System.out.println("\n--- Turno de " + atacante.getNombre() + " ---");
+		System.out.println(atacante.getNombre() + " ataca a " + victima.getNombre());
+		atacante.atacar(victima);
+		
+	}
 
-	        // Lógica del Mago
-	        if (atacante instanceof Mago) {
-	            boolean decideCurar = ThreadLocalRandom.current().nextBoolean();
-	            Personaje aliadoHerido = equipoA.masHerido();
-
-	            if (decideCurar && aliadoHerido != null) {
-	                System.out.println(atacante.getNombre() + " decide usar magia curativa en " + aliadoHerido.getNombre());
-	                ((Mago) atacante).Curable(aliadoHerido);
-	                return; 
-	            }
-	        }
-
-	        System.out.println(atacante.getNombre() + " ataca a " + victima.getNombre());
-	        atacante.atacar(victima);
-	    }
 	
+	public void batalla() {
+		boolean turnoEquipoA = true; 
+
+		System.out.println("⚔️ ¡COMIENZA LA BATALLA! ⚔️");
+
+		while (equipoA.tieneVivos() && equipoB.tieneVivos()) {
+			
+			Equipo<?> equipoAtacante = turnoEquipoA ? equipoA : equipoB;
+			Equipo<?> equipoDefensor = turnoEquipoA ? equipoB : equipoA;
+
+			Personaje atacante = equipoAtacante.obtenerPersonajeVivoAleatorio();
+			Personaje victima = equipoDefensor.obtenerPersonajeVivoAleatorio();
+
+			turnoAtaque(atacante, victima, equipoAtacante);
+
+			turnoEquipoA = !turnoEquipoA; 
+		}
+
+		Equipo<?> ganador = equipoA.tieneVivos() ? equipoA : equipoB;
+		System.out.println("\n🏆 El Equipo ganador es: " + ganador.getNombreEquipo() + " 🏆");
+	}
 
 }
