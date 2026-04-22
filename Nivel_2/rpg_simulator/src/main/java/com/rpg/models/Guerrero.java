@@ -11,6 +11,7 @@ public class Guerrero extends Personaje {
 	public void atacar(Personaje objetivo) {
 		float golpe = this.ataqueBase * 1.2f;
 		objetivo.recibirDano((int) (golpe));
+		System.out.println(objetivo.getNombre()+" HP actual "+objetivo.getHp());
 	}
 
 }

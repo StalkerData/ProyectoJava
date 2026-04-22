@@ -18,6 +18,7 @@ public class Arquero extends Personaje {
 		} else {
 			objetivo.recibirDano(this.ataqueBase);
 		}
+		System.out.println(objetivo.getNombre()+" HP actual "+objetivo.getHp());
 
 	}
 

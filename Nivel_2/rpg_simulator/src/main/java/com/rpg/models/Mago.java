@@ -11,6 +11,7 @@ public class Mago extends Personaje implements Sanador {
 	@Override
 	public void atacar(Personaje objetivo) {
 		objetivo.recibirDano(ataqueBase);
+		System.out.println(objetivo.getNombre()+" HP actual "+objetivo.getHp());
 	}
 
 	@Override
