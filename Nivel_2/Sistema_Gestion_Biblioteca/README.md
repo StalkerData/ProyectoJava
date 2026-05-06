@@ -25,5 +25,4 @@ Motor de lógica de negocio (Core) desarrollado 100% en Java, diseñado para ges
 **Regresar al [Principal](../../README.md) 🏠**
 
 ---
-## Autor
-👨🏻‍💼 **[GitHub: StalkerData](https://github.com/StalkerData)**
+👨🏻‍💼 **Autor** [GitHub: StalkerData](https://github.com/StalkerData)
