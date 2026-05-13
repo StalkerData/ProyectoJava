@@ -1,5 +1,7 @@
 package main.java.com.ecommerce.payment;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import main.java.com.ecommerce.exception.FondosInsuficientesException;
 import main.java.com.ecommerce.exception.PagoFallidoException;
 
@@ -19,8 +21,15 @@ public class PagoPayPal implements MetodoPago {
 
 	@Override
 	public void procesarPago(double monto) throws PagoFallidoException, FondosInsuficientesException {
-		// TODO Auto-generated method stub
-
+		if (saldoCuenta < monto) {
+			throw new FondosInsuficientesException("El saldo disponible de $" + saldoCuenta + " es insuficiente");
+		}
+		// 10% de probabilidad de falla (0 a 9)
+		if (ThreadLocalRandom.current().nextInt(10) == 0) {
+			throw new PagoFallidoException("Red congestionada o no hay conexión");
+		}
+		saldoCuenta -= monto;
+		System.out.println("Pago de $" + monto + " procesado con éxito vía PayPal al correo" + correo);
 	}
 
 	// *************************
