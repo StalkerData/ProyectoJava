@@ -1,5 +1,5 @@
 package main.java.com.ecommerce.model;
 
-enum Categoria {
+public enum Categoria {
 	ELECTRONICA, ROPA, ALIMENTOS
 }

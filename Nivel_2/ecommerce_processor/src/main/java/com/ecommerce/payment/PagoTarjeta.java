@@ -26,7 +26,7 @@ public class PagoTarjeta implements MetodoPago {
 		}
 		// 10% de probabilidad de falla (0 a 9)
 		if (ThreadLocalRandom.current().nextInt(10) == 0) {
-			throw new PagoFallidoException("Red congestionada o no hay conexión");
+			throw new PagoFallidoException("Red congestionada o no hay conexión o no hay sistema");
 		}
 		saldoDisponible -= monto;
 		System.out.println("Pago de $" + monto + " procesado con éxito vía Tarjeta");
