@@ -32,10 +32,7 @@ public class PagoCripto implements MetodoPago {
 		}
 		saldoBtc -= monto;
 		System.out.println(
-				"Pago de $" + monto + 
-				" procesado con éxito vía direccionWallet a la Wallet" 
-				+ direccionWallet
-				);
+				"Pago de $" + monto + " procesado con éxito vía direccionWallet a la Wallet" + direccionWallet);
 	}
 
 	// *************************
