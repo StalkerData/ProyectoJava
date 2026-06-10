@@ -9,9 +9,7 @@ public class PagoPayPal implements MetodoPago {
 	private String correo;
 	private double saldoCuenta;
 
-	public PagoPayPal() {
-		super();
-	}
+
 
 	public PagoPayPal(String correo, double saldoCuenta) {
 		super();

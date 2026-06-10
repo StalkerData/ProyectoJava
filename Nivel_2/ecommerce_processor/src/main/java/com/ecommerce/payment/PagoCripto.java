@@ -10,10 +10,6 @@ public class PagoCripto implements MetodoPago {
 	private String direccionWallet;
 	private double saldoBtc;
 
-	public PagoCripto() {
-		super();
-
-	}
 
 	public PagoCripto(String direccionWallet, double saldoBtc) {
 		super();

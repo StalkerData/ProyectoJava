@@ -9,9 +9,7 @@ public class PagoTarjeta implements MetodoPago {
 	private String numeroTarjeta;
 	private double saldoDisponible;
 
-	public PagoTarjeta() {
-		super();
-	}
+
 
 	public PagoTarjeta(String numeroTarjeta, double saldoDisponible) {
 		super();
