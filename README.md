@@ -8,7 +8,7 @@ Cada nivel introduce conceptos, prácticas y proyectos diseñados para construir
 
 El enfoque principal es **Java como lenguaje backend**, priorizando lógica de negocio, buenas prácticas y escalabilidad, utilizando proyectos prácticos como evidencia del aprendizaje.
 
-Actualmente, el repositorio se encuentra en desarrollo activo y contiene implementaciones hasta el **Nivel 1**.
+Actualmente, el repositorio se encuentra en desarrollo activo y contiene implementaciones hasta el **Nivel 2**.
 
 ---
 
@@ -23,15 +23,18 @@ Actualmente, el repositorio se encuentra en desarrollo activo y contiene impleme
 
 ## 📚 Estructura del repositorio
 
-```
+```text
 📂 ProyectoJava/
-└──  📂Nivel_1/
-  ├── 📂Calculadora_Java/
-  └── 📂Sistema_Notas/
+├── 📂Nivel_1/
+│   ├── 📂Calculadora_Java/
+│   └── 📂Sistema_Notas/
+└── 📂Nivel_2/
+    ├── 📂ecommerce_processor/
+    ├── 📂rpg_simulator/
+    └── 📂Sistema_Gestion_Biblioteca/
 ```
 
 ---
-
 
 Cada carpeta de nivel contiene:
 - Proyectos independientes
@@ -54,29 +57,46 @@ Nivel enfocado en los pilares de la programación y el backend con Java.
 - Estructuras de control (`if`, `switch`, bucles)
 - Arrays y colecciones básicas
 - Métodos y funciones
-- Introducción a Programación Orientada a Objetos:
-  - Clases
-  - Objetos
-- Uso de IDEs:
-  - Eclipse (principal)
+- Introducción a Programación Orientada a Objetos (Clases y Objetos)
+- Uso de IDEs (Eclipse)
 
 **Proyectos desarrollados:**
 - 🧮 Calculadora en Java (consola)
 - 📚 Sistema de notas en consola
 
+---
+
+### 👾 Nivel 2: Programación Orientada a Objetos y Lógica de Negocio Avanzada
+Nivel enfocado en el diseño de software, arquitecturas limpias y calidad de código.
+
+👾 **[Nivel 2](Nivel_2/README.md)**
+
+**Conceptos abordados:**
+- POO Avanzada: Herencia, Polimorfismo, Abstracción y Encapsulamiento estricto.
+- Colecciones eficientes (`List`, `Map`, `Set`).
+- Manejo de Excepciones personalizadas (Fail-Fast).
+- Características modernas de Java: `Records`, `Streams`, `Lambdas` y `Method References`.
+- Genéricos (`<T>`) y Type Safety.
+- Patrones de Diseño (Patrón *Strategy*).
+- Principios SOLID (Open/Closed, Single Responsibility).
+- Pruebas Unitarias (TDD) con **JUnit 5**.
+
+**Proyectos desarrollados:**
+- 📚 Sistema de Gestión de Biblioteca (Core de negocio)
+- ⚔️ Simulador de Batallas RPG (Motor de turnos y polimorfismo)
+- 🛒 Procesador de Pedidos E-commerce (Patrón Strategy y Streams)
+
 Las aplicaciones de este nivel:
-- Se ejecutan únicamente en consola
-- No utilizan archivos ni bases de datos
-- No usan frameworks
-- Se enfocan en lógica y control de flujo
+- Se ejecutan como motores de lógica (Core/Domain API).
+- No utilizan bases de datos (estado en memoria).
+- Se enfocan en la robustez, el desacoplamiento y la cobertura de pruebas.
 
 ---
 
 ## 🚀 Próximos pasos (planificados)
 
-- 📦 Nivel 2: Programación Orientada a Objetos intermedia y estructuras de datos
 - 🗄️ Nivel 3: Persistencia de datos y bases de datos con Java
-- 🌐 Nivel 4: Desarrollo de APIs REST con Java
+- 🌐 Nivel 4: Desarrollo de APIs REST con Java (Spring Boot)
 - 🏗️ Nivel 5: Arquitectura backend escalable y buenas prácticas
 - ☁️ Nivel 6: DevOps y despliegue de aplicaciones backend
 - 🧠 Nivel 7: Backend profesional y sistemas distribuidos
@@ -87,6 +107,7 @@ Estos niveles se añadirán progresivamente al repositorio.
 
 ## 📌 Estado actual
 ✔ 🏠 Nivel 1 completado  
+✔ 👾 Nivel 2 completado  
 🚧 Niveles superiores en planificación y desarrollo
 
 ---

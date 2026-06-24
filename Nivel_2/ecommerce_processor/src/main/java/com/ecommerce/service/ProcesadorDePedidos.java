@@ -12,11 +12,11 @@ import main.java.com.ecommerce.payment.MetodoPago;
 
 public class ProcesadorDePedidos {
 
-	public static double calcularTotalSinImpuestos(Pedido pedido) {
+	public double calcularTotalSinImpuestos(Pedido pedido) {
 		return pedido.getCarrito().stream().mapToDouble(Producto::precio).sum();
 	}
 
-	private static double factorImpuesto(Categoria categoria) {
+	private double factorImpuesto(Categoria categoria) {
 		return switch (categoria) {
 		case ELECTRONICA -> 1.19;
 		case ROPA -> 1.12;
@@ -24,22 +24,22 @@ public class ProcesadorDePedidos {
 		};
 	}
 
-	public static  double calcularTotalConImpuestos(Pedido pedido) {
+	public double calcularTotalConImpuestos(Pedido pedido) {
 		return pedido.getCarrito().stream()
 				.mapToDouble(producto -> producto.precio() * factorImpuesto(producto.categoria())).sum();
 	}
 
-	public static List<Producto> filtrarPorCategoria(Pedido pedido, Categoria categoria) {
+	public List<Producto> filtrarPorCategoria(Pedido pedido, Categoria categoria) {
 		return pedido.getCarrito().stream().filter(producto -> producto.categoria().equals(categoria)).toList();
 
 	}
 
-	public static void ordenarProductosPorPrecio(Pedido pedido, Comparator<Producto> comparador) {
+	public void ordenarProductosPorPrecio(Pedido pedido, Comparator<Producto> comparador) {
 		List<Producto> listaOrdenada = pedido.getCarrito().stream().sorted(comparador).toList();
 		pedido.setCarrito(listaOrdenada);
 	}
 
-	public static void procesar(Pedido pedido, MetodoPago metodoPago) throws Exception {
+	public void procesar(Pedido pedido, MetodoPago metodoPago) throws Exception {
 		double total = calcularTotalConImpuestos(pedido);
 		try {
 			metodoPago.procesarPago(total);

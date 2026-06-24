@@ -18,9 +18,11 @@ class ProcesadorDePedidosTest {
 	private List<Producto> listProductos1;
 	private List<Producto> listProductos2;
 	private List<Producto> listProductos3;
+	private ProcesadorDePedidos servicioDePedidos;
 
 	@BeforeEach
 	void setUp() throws Exception {
+		servicioDePedidos = new ProcesadorDePedidos();
 		Producto p1 = new Producto("001", "Teclado", 100.0, Categoria.ELECTRONICA);
 		Producto p2 = new Producto("002", "Camisa", 50.0, Categoria.ROPA);
 		Producto p3 = new Producto("003", "Manzana", 2.0, Categoria.ALIMENTOS);
@@ -33,29 +35,29 @@ class ProcesadorDePedidosTest {
 	}
 
 	@Test
-	void tesTotalSinImpuestos() {
+	void testTotalSinImpuestos() {
 		testPedido = new Pedido(listProductos1);
-		assertEquals(152.0, ProcesadorDePedidos.calcularTotalSinImpuestos(testPedido));
+		assertEquals(152.0, servicioDePedidos.calcularTotalSinImpuestos(testPedido));
 	}
 	
 	@Test
-	void tesTotalConImpuestos() {
+	void testTotalConImpuestos() {
 		testPedido = new Pedido(listProductos1);
-		assertEquals(177.1, ProcesadorDePedidos.calcularTotalConImpuestos(testPedido), 0.01);
+		assertEquals(177.1, servicioDePedidos.calcularTotalConImpuestos(testPedido), 0.01);
 	}
 	
 	@Test
-	void testfiltrarPorCategoria() {
+	void testFiltrarPorCategoria() {
 		testPedido = new Pedido(listProductos2);
-		List<Producto> lista= ProcesadorDePedidos.filtrarPorCategoria(testPedido, Categoria.ELECTRONICA);
+		List<Producto> lista= servicioDePedidos.filtrarPorCategoria(testPedido, Categoria.ELECTRONICA);
 		assertEquals(2, lista.size());
 	}
 	
 	@Test
 	void testOrdenamiento() {
 		testPedido = new Pedido(listProductos3);
-		ProcesadorDePedidos.ordenarProductosPorPrecio(testPedido, Comparator.comparing(Producto::precio).reversed());
-		assertTrue(listProductos3.getLast().equals(testPedido.getCarrito().getFirst()));
+		servicioDePedidos.ordenarProductosPorPrecio(testPedido, Comparator.comparing(Producto::precio).reversed());
+		assertEquals(100.0, testPedido.getCarrito().getFirst().precio());
 	}
 
 }

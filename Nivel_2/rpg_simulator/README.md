@@ -21,6 +21,8 @@ Motor de lógica de negocio desarrollado 100% en Java para simular batallas por 
 
 ---
 
+**Regresar al [Nivel 2](../README.md) 👾**
+
 **Regresar al [Principal](../../README.md) 🏠**
 
 ---

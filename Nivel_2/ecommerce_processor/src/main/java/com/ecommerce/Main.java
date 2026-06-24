@@ -13,6 +13,7 @@ import main.java.com.ecommerce.service.ProcesadorDePedidos;
 
 public class Main {
 	public static void main(String[] args) {
+		ProcesadorDePedidos servicioDePedidos = new ProcesadorDePedidos();
 		Producto p1 = new Producto("001", "Laptop", 999.99, Categoria.ELECTRONICA);
 		Producto p2 = new Producto("001", "Teclado", 20.99, Categoria.ELECTRONICA);
 		Producto p3 = new Producto("002", "Vestido", 120.0, Categoria.ROPA);
@@ -22,10 +23,10 @@ public class Main {
 
 		Pedido pedido1 = new Pedido(productoList);
 
-		System.out.println(ProcesadorDePedidos.calcularTotalSinImpuestos(pedido1));
-		System.out.println(ProcesadorDePedidos.calcularTotalConImpuestos(pedido1));
+		System.out.println(servicioDePedidos.calcularTotalSinImpuestos(pedido1));
+		System.out.println(servicioDePedidos.calcularTotalConImpuestos(pedido1));
 
-		for (Producto producto : ProcesadorDePedidos.filtrarPorCategoria(pedido1, Categoria.ELECTRONICA)) {
+		for (Producto producto : servicioDePedidos.filtrarPorCategoria(pedido1, Categoria.ELECTRONICA)) {
 			System.out.println(producto);
 		}
 
@@ -35,13 +36,13 @@ public class Main {
 		}
 
 		System.out.println("\nOrdenado por presio");
-		ProcesadorDePedidos.ordenarProductosPorPrecio(pedido1, Comparator.comparing(Producto::precio).reversed());
+		servicioDePedidos.ordenarProductosPorPrecio(pedido1, Comparator.comparing(Producto::precio).reversed());
 		for (Producto producto : pedido1.getCarrito()) {
 			System.out.println(producto);
 		}
 
 		try {
-			ProcesadorDePedidos.procesar(pedido1, new PagoCripto("1211aeff3c", 8000.0));
+			servicioDePedidos.procesar(pedido1, new PagoCripto("1211aeff3c", 8000.0));
 		} catch (FondosInsuficientesException e) {
 			System.err.println("Error: Fondos insuficientes. Detalle: " + e.getMessage());
 		} catch (PagoFallidoException e) {
@@ -56,7 +57,7 @@ public class Main {
 		p3 = new Producto("003", "Manzana", 2.0, Categoria.ALIMENTOS);
 		productoList = List.of(p1, p2, p3);
 		pedido1 = new Pedido(productoList);
-		System.out.println(ProcesadorDePedidos.calcularTotalSinImpuestos(pedido1));
-		System.out.println(ProcesadorDePedidos.calcularTotalConImpuestos(pedido1));
+		System.out.println(servicioDePedidos.calcularTotalSinImpuestos(pedido1));
+		System.out.println(servicioDePedidos.calcularTotalConImpuestos(pedido1));
 	}
 }
